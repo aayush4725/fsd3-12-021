@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
   const product = [
     {
       name: "Iphone",
-      price: 85000,
+      price: 885,
       qty: 2,
       discount: 15,
     },
@@ -17,6 +17,12 @@ const server = http.createServer((req, res) => {
       qty: 1,
       discount: 25,
     },
+    {
+      name : "Linux",
+      price : "234543",
+      qty : 1,
+      discount : 34,
+    }
   ];
 
   res.end(JSON.stringify(product));
