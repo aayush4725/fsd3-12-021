@@ -3,209 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us - Product Enquiry</title>
+<title>Contact — Product Enquiry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f4f6f8;
-    color: #222;
-    line-height: 1.6;
+  :root{
+    --ink:#0E2723;
+    --ink-soft:#173F38;
+    --paper:#F6F3EC;
+    --paper-dim:#EDE8DC;
+    --gold:#C99A4A;
+    --gold-soft:#E4C892;
+    --sage:#7FA396;
+    --text-on-ink:#F1EEE4;
+    --text-on-ink-dim:#AFC4BC;
+    --text-ink:#1B2320;
+    --text-ink-dim:#5A6560;
+    --error:#B4543A;
   }
-  header {
-    background: #1a2634;
-    color: #fff;
-    padding: 24px 20px;
-    text-align: center;
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--text-ink);
+    background:var(--paper);
   }
-  header h1 { font-size: 1.8rem; }
-  header p { color: #b8c2cc; margin-top: 6px; }
-
-  .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-  @media (max-width: 700px) {
-    .container { grid-template-columns: 1fr; }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
   }
 
-  .card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 28px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  .wrap{
+    display:grid;
+    grid-template-columns:minmax(280px,38%) 1fr;
+    min-height:100vh;
+  }
+  @media (max-width:860px){
+    .wrap{grid-template-columns:1fr;}
   }
 
-  .card h2 {
-    font-size: 1.3rem;
-    margin-bottom: 16px;
-    color: #1a2634;
+  /* ---------- LEFT PANEL ---------- */
+  .panel-left{
+    background:
+      radial-gradient(circle at 85% 10%, rgba(201,154,74,0.16), transparent 45%),
+      linear-gradient(165deg, var(--ink) 0%, var(--ink-soft) 100%);
+    color:var(--text-on-ink);
+    padding:clamp(36px,6vw,72px) clamp(28px,5vw,56px);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
   }
 
-  form label {
-    display: block;
-    font-weight: 600;
-    margin-top: 14px;
-    margin-bottom: 6px;
-    font-size: 0.9rem;
+  .brand{
+    font-family:'Fraunces',serif;
+    font-size:1.05rem;
+    font-weight:450;
+    letter-spacing:0.02em;
+    opacity:0.9;
   }
 
-  form input,
-  form select,
-  form textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-family: inherit;
+  .headline-block{ margin-top:clamp(24px,8vh,64px); }
+  .headline-block h1{
+    font-family:'Fraunces',serif;
+    font-weight:450;
+    font-size:clamp(2.1rem,4.4vw,3rem);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    max-width:11ch;
+    margin:0 0 18px 0;
+  }
+  .headline-block p{
+    font-size:1.02rem;
+    line-height:1.65;
+    color:var(--text-on-ink-dim);
+    max-width:34ch;
+    margin:0;
   }
 
-  form textarea { resize: vertical; min-height: 100px; }
+  .contact-list{
+    margin-top:clamp(32px,8vh,64px);
+    display:flex;
+    flex-direction:column;
+  }
+  .contact-item{
+    padding:18px 0;
+    border-top:1px solid rgba(241,238,228,0.14);
+  }
+  .contact-item:last-child{ border-bottom:1px solid rgba(241,238,228,0.14); }
+  .contact-item .label{
+    font-size:0.8rem;
+    color:var(--gold-soft);
+    margin-bottom:4px;
+  }
+  .contact-item a, .contact-item span.value{
+    font-size:1.05rem;
+    color:var(--text-on-ink);
+    text-decoration:none;
+    font-weight:500;
+  }
+  .contact-item a:hover{ color:var(--gold-soft); }
 
-  form button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    background: #2563eb;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
+  /* ---------- RIGHT PANEL ---------- */
+  .panel-right{
+    padding:clamp(36px,6vw,72px) clamp(24px,6vw,88px);
+    display:flex;
+    align-items:center;
   }
-  form button:hover { background: #1d4ed8; }
-
-  .info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 20px;
+  .form-shell{
+    width:100%;
+    max-width:520px;
+    margin:0 auto;
   }
-  .info-item .icon {
-    font-size: 1.3rem;
-    width: 32px;
-    text-align: center;
+  .form-shell h2{
+    font-family:'Fraunces',serif;
+    font-weight:450;
+    font-size:1.7rem;
+    color:var(--text-ink);
+    margin:0 0 8px 0;
   }
-  .info-item h3 {
-    font-size: 0.95rem;
-    margin-bottom: 2px;
-  }
-  .info-item p, .info-item a {
-    font-size: 0.9rem;
-    color: #555;
-    text-decoration: none;
+  .form-shell > p.lede{
+    color:var(--text-ink-dim);
+    font-size:0.98rem;
+    margin:0 0 36px 0;
+    line-height:1.6;
   }
 
-  .confirmation {
-    display: none;
-    margin-top: 16px;
-    padding: 12px;
-    background: #e6f4ea;
-    color: #1e7e34;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    text-align: center;
+  .field{
+    position:relative;
+    margin-bottom:28px;
+  }
+  .field label{
+    display:block;
+    font-size:0.85rem;
+    color:var(--text-ink-dim);
+    margin-bottom:8px;
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    border:none;
+    border-bottom:1.5px solid #C9C2B0;
+    background:transparent;
+    padding:8px 2px 10px 2px;
+    font-size:1rem;
+    font-family:'Inter',sans-serif;
+    color:var(--text-ink);
+    outline:none;
+    transition:border-color 0.18s ease;
+    border-radius:0;
+  }
+  .field select{ cursor:pointer; }
+  .field textarea{ resize:vertical; min-height:88px; }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--gold);
+  }
+  .field input:invalid:not(:placeholder-shown){
+    border-color:var(--error);
   }
 
-  footer {
-    text-align: center;
-    padding: 20px;
-    color: #888;
-    font-size: 0.85rem;
+  .row-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 24px;
   }
+  @media (max-width:520px){
+    .row-2{grid-template-columns:1fr;}
+  }
+
+  .submit-btn{
+    appearance:none;
+    border:none;
+    background:var(--ink);
+    color:var(--text-on-ink);
+    font-family:'Inter',sans-serif;
+    font-size:0.98rem;
+    font-weight:600;
+    padding:15px 30px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:background 0.2s ease, transform 0.15s ease;
+    margin-top:6px;
+  }
+  .submit-btn:hover{ background:var(--ink-soft); }
+  .submit-btn:active{ transform:translateY(1px); }
+
+  .confirmation{
+    display:none;
+    margin-top:20px;
+    padding:14px 16px;
+    background:#EAF1EC;
+    border-left:3px solid var(--sage);
+    color:#2E5745;
+    font-size:0.92rem;
+  }
+  .confirmation.show{ display:block; animation:fade-in 0.35s ease; }
+  @keyframes fade-in{ from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:translateY(0);} }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Contact Us</h1>
-  <p>Have a question about our product? We'd love to hear from you.</p>
-</header>
+<div class="wrap">
 
-<div class="container">
+  <!-- LEFT: identity + contact details -->
+  <div class="panel-left">
+    <div class="brand">Your Company</div>
 
-  <div class="card">
-    <h2>Product Enquiry Form</h2>
-    <form id="enquiryForm">
-      <label for="name">Full Name *</label>
-      <input type="text" id="name" name="name" required placeholder="Your name">
-
-      <label for="email">Email Address *</label>
-      <input type="email" id="email" name="email" required placeholder="you@example.com">
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
-
-      <label for="product">Product of Interest *</label>
-      <select id="product" name="product" required>
-        <option value="">Select a product</option>
-        <option value="product-a">Product A</option>
-        <option value="product-b">Product B</option>
-        <option value="product-c">Product C</option>
-        <option value="other">Other</option>
-      </select>
-
-      <label for="message">Your Message *</label>
-      <textarea id="message" name="message" required placeholder="Tell us what you'd like to know..."></textarea>
-
-      <button type="submit">Send Enquiry</button>
-      <div class="confirmation" id="confirmation">✓ Thank you! Your enquiry has been submitted.</div>
-    </form>
-  </div>
-
-  <div class="card">
-    <h2>Get in Touch</h2>
-
-    <div class="info-item">
-      <div class="icon">📍</div>
-      <div>
-        <h3>Address</h3>
-        <p>123 Business Street, Ghaziabad, Uttar Pradesh, India</p>
-      </div>
+    <div class="headline-block">
+      <h1>Tell us what you're building</h1>
+      <p>Send a product enquiry and our team will get back to you within one business day.</p>
     </div>
 
-    <div class="info-item">
-      <div class="icon">📞</div>
-      <div>
-        <h3>Phone</h3>
-        <a href="tel:+911234567890">+91 123 456 7890</a>
-      </div>
-    </div>
-
-    <div class="info-item">
-      <div class="icon">✉️</div>
-      <div>
-        <h3>Email</h3>
+    <div class="contact-list">
+      <div class="contact-item">
+        <div class="label">Email</div>
         <a href="mailto:enquiry@example.com">enquiry@example.com</a>
       </div>
-    </div>
-
-    <div class="info-item">
-      <div class="icon">🕒</div>
-      <div>
-        <h3>Business Hours</h3>
-        <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+      <div class="contact-item">
+        <div class="label">Phone</div>
+        <a href="tel:+911234567890">+91 123 456 7890</a>
       </div>
+      <div class="contact-item">
+        <div class="label">Office</div>
+        <span class="value">123 Business Street, Ghaziabad, Uttar Pradesh</span>
+      </div>
+      <div class="contact-item">
+        <div class="label">Hours</div>
+        <span class="value">Mon – Fri, 9:00 AM to 6:00 PM IST</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: enquiry form -->
+  <div class="panel-right">
+    <div class="form-shell">
+      <h2>Product enquiry</h2>
+      <p class="lede">Fill in a few details and we'll route your message to the right person on our team.</p>
+
+      <form id="enquiryForm" novalidate>
+        <div class="row-2">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required placeholder="Jordan Lee">
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required placeholder="jordan@company.com">
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+          </div>
+          <div class="field">
+            <label for="product">Product of interest</label>
+            <select id="product" name="product" required>
+              <option value="" disabled selected>Select a product</option>
+              <option value="product-a">Product A</option>
+              <option value="product-b">Product B</option>
+              <option value="product-c">Product C</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" required placeholder="Tell us what you'd like to know..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send enquiry</button>
+        <div class="confirmation" id="confirmation">Thanks — your enquiry has been sent. We'll reply within one business day.</div>
+      </form>
     </div>
   </div>
 
 </div>
 
-<footer>
-  &copy; 2026 Your Company. All rights reserved.
-</footer>
-
 <script>
-  document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+  document.getElementById('enquiryForm').addEventListener('submit', function(e){
     e.preventDefault();
-    document.getElementById('confirmation').style.display = 'block';
+    if(!this.checkValidity()){
+      this.reportValidity();
+      return;
+    }
+    document.getElementById('confirmation').classList.add('show');
     this.reset();
   });
 </script>
