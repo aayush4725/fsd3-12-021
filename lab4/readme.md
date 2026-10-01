@@ -23,3 +23,12 @@ script{
 - REST API (get , post , put , patch , delete) method to communicate with client
 - any browser can check only get method
 - for other method type we use third party API Tester like postman,thunder client, echo api etc
+
+### Request Type 
+1. Get-all , Get-by Id
+ - Get: /api/products (ye get all prducts ke liye h)
+ - Get: /api/product/101 (ye get all products ke liye h ) 
+ 2. POST:/api/products and data will be shared by echo api body section  (  ye product add krne ke liye h)
+ 3. PUT/PATCH:/api/products/201 (isme hme product updatr krne ke liye use krte h)
+ 4. DELETE:/api/products/202 (isme hm single product ko delete kr ke ge)
+ 
