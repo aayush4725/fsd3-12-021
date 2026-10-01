@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Contact BMW M340i</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050608;
+            color: white;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+
+            height: 75px;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(0, 0, 0, 0.88);
+
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid #222;
+        }
+
+
+        .logo {
+
+            font-size: 28px;
+
+            font-weight: 900;
+
+            letter-spacing: -2px;
+
+            color: white;
+
+            text-decoration: none;
+        }
+
+
+        .logo span {
+            color: #1476d4;
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            gap: 32px;
+
+            list-style: none;
+        }
+
+
+        nav ul li a {
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        nav ul li a:hover {
+            color: #1476d4;
+        }
+
+
+        .nav-btn {
+
+            padding: 12px 20px;
+
+            background: #1476d4;
+
+            color: white;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+
+        .nav-btn:hover {
+            background: #0d5bab;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            padding: 150px 6% 80px;
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 0%,
+                    #123c68 0%,
+                    #080a0d 48%,
+                    #050608 75%
+                );
+        }
+
+
+        .hero span {
+
+            color: #777;
+
+            text-transform: uppercase;
+
+            letter-spacing: 5px;
+
+            font-size: 12px;
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(55px, 7vw, 95px);
+
+            letter-spacing: -5px;
+
+            margin: 20px 0;
+        }
+
+
+        .hero p {
+
+            max-width: 620px;
+
+            margin: auto;
+
+            color: #9298a0;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= CONTACT SECTION ================= */
+
+        .contact {
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 90px 6%;
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 55px;
+
+            align-items: start;
+        }
+
+
+        /* ================= CONTACT INFORMATION ================= */
+
+        .info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+
+        .card {
+
+            background: #0d0f13;
+
+            border: 1px solid #252930;
+
+            padding: 25px;
+
+            display: flex;
+
+            gap: 18px;
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+
+            border-color: #1476d4;
+
+            transform: translateX(5px);
+        }
+
+
+        .icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #111b27;
+
+            color: #1476d4;
+
+            font-size: 20px;
+        }
+
+
+        .card h3 {
+
+            font-size: 16px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .card p {
+
+            color: #888;
+
+            line-height: 1.6;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .form-box {
+
+            background: #0d0f13;
+
+            border: 1px solid #252930;
+
+            padding: 40px;
+        }
+
+
+        .row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        .group {
+
+            margin-bottom: 22px;
+        }
+
+
+        .group label {
+
+            display: block;
+
+            color: #aaa;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 9px;
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            background: #08090b;
+
+            color: white;
+
+            border: 1px solid #292d34;
+
+            padding: 15px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        textarea {
+
+            resize: vertical;
+
+            min-height: 140px;
+        }
+
+
+        input::placeholder,
+        textarea::placeholder {
+
+            color: #555;
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #1476d4;
+
+            box-shadow:
+                0 0 0 2px rgba(20, 118, 212, 0.08);
+        }
+
+
+        select {
+
+            cursor: pointer;
+        }
+
+
+        .submit {
+
+            width: 100%;
+
+            padding: 17px;
+
+            background: #1476d4;
+
+            color: white;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .submit:hover {
+
+            background: #0d5bab;
+
+            transform: translateY(-2px);
+        }
+
+
+        .note {
+
+            text-align: center;
+
+            color: #555;
+
+            font-size: 11px;
+
+            line-height: 1.5;
+
+            margin-top: 14px;
+        }
+
+
+        /* ================= SUCCESS MESSAGE ================= */
+
+        .success {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 55px 20px;
+        }
+
+
+        .success.show {
+            display: block;
+        }
+
+
+        .check {
+
+            width: 70px;
+
+            height: 70px;
+
+            margin: 0 auto 22px;
+
+            border-radius: 50%;
+
+            background: #1476d4;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 30px;
+        }
+
+
+        .success h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .success p {
+
+            color: #888;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+
+        .back {
+
+            display: inline-block;
+
+            padding: 13px 20px;
+
+            border: 1px solid #555;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .back:hover {
+
+            background: white;
+
+            color: black;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            border-top: 1px solid #222;
+
+            padding: 35px 6%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+
+        /* ================= TOAST ================= */
+
+        .toast {
+
+            position: fixed;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, 30px);
+
+            background: white;
+
+            color: black;
+
+            padding: 14px 22px;
+
+            border-radius: 4px;
+
+            font-weight: bold;
+
+            opacity: 0;
+
+            transition: 0.3s;
+
+            z-index: 9999;
+        }
+
+
+        .toast.show {
+
+            opacity: 1;
+
+            transform:
+                translate(-50%, 0);
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                display: none;
+            }
+
+
+            .contact {
+
+                grid-template-columns: 1fr;
+
+                padding-top: 60px;
+            }
+
+
+            .row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+            }
+
+
+            .form-box {
+
+                padding: 30px;
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 500px) {
+
+            nav {
+
+                padding: 0 5%;
+            }
+
+
+            .nav-btn {
+                display: none;
+            }
+
+
+            .hero {
+
+                padding:
+                    130px 5% 60px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 60px;
+
+                letter-spacing: -4px;
+            }
+
+
+            .contact {
+
+                padding:
+                    60px 5%;
+            }
+
+
+            .form-box {
+
+                padding: 22px;
+            }
+
+
+            .card {
+
+                padding: 20px;
+            }
+
+
+            footer {
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <a
+            href="index.html"
+            class="logo">
+
+            BMW<span>///</span>M
+
+        </a>
+
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#performance">
+                    Performance
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#technology">
+                    Technology
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#configure">
+                    Configure
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#gallery">
+                    Gallery
+                </a>
+            </li>
+
+        </ul>
+
+
+        <button
+            class="nav-btn"
+            onclick="
+                document
+                .getElementById('contactForm')
+                .scrollIntoView();
+            ">
+
+            Contact Us
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <span>
+            BMW M340i xDrive
+        </span>
+
+
+        <h1>
+            Let's talk.
+        </h1>
+
+
+        <p>
+
+            Have a question about the BMW M340i xDrive,
+            want to request a quote, or book a test drive?
+
+            Send us your details and our team will get
+            back to you.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact">
+
+
+        <!-- INFORMATION -->
+
+        <div class="info">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    📍
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Visit Us
+                    </h3>
+
+                    <p>
+
+                        BMW Authorised Dealer
+                        <br>
+
+                        Ghaziabad,
+                        Uttar Pradesh
+                        <br>
+
+                        India
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+                    ☎
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Call Us
+                    </h3>
+
+                    <p>
+                        +91 1800 102 2269
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+                    ✉
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        customer.service@bmw.in
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+                    ◷
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Opening Hours
+                    </h3>
+
+                    <p>
+
+                        Monday – Saturday
+                        <br>
+
+                        9:00 AM – 7:00 PM
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= FORM ================= -->
+
+        <div class="form-box">
+
+
+            <form id="contactForm">
+
+
+                <div class="row">
+
+
+                    <div class="group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+91 XXXXX XXXXX"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required>
+
+                </div>
+
+
+
+                <div class="group">
+
+                    <label>
+                        Subject
+                    </label>
+
+                    <select
+                        id="subject"
+                        required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option>
+                            BMW M340i Enquiry
+                        </option>
+
+                        <option>
+                            Book a Test Drive
+                        </option>
+
+                        <option>
+                            Request a Quote
+                        </option>
+
+                        <option>
+                            Service Enquiry
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="group">
+
+                    <label>
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Tell us how we can help..."
+                        required></textarea>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="submit">
+
+                    Send Message →
+
+                </button>
+
+
+                <p class="note">
+
+                    By submitting this form,
+                    you agree to be contacted
+                    regarding your enquiry.
+
+                </p>
+
+
+            </form>
+
+
+
+            <!-- SUCCESS -->
+
+            <div
+                class="success"
+                id="success">
+
+
+                <div class="check">
+                    ✓
+                </div>
+
+
+                <h2>
+                    Thank You!
+                </h2>
+
+
+                <p>
+
+                    Your enquiry has been
+                    received successfully.
+
+                    <br>
+
+                    Our team will contact
+                    you shortly.
+
+                </p>
+
+
+                <a
+                    href="index.html"
+                    class="back">
+
+                    ← Back to BMW M340i
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <span>
+            BMW M340i xDrive
+        </span>
+
+
+        <span>
+            Product Page Project • 2026
+        </span>
+
+    </footer>
+
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast"
+        id="toast">
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const form =
+            document.getElementById(
+                "contactForm"
+            );
+
+
+        const success =
+            document.getElementById(
+                "success"
+            );
+
+
+        const toast =
+            document.getElementById(
+                "toast"
+            );
+
+
+        function showToast(message) {
+
+            toast.textContent =
+                message;
+
+            toast.classList.add(
+                "show"
+            );
+
+
+            setTimeout(
+                function () {
+
+                    toast.classList.remove(
+                        "show"
+                    );
+
+                },
+                2500
+            );
+
+        }
+
+
+        form.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+
+                const phone =
+                    document
+                    .getElementById("phone")
+                    .value
+                    .trim();
+
+
+                const email =
+                    document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+
+                const subject =
+                    document
+                    .getElementById("subject")
+                    .value;
+
+
+                const message =
+                    document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
+
+                if (
+                    name === "" ||
+                    phone === "" ||
+                    email === "" ||
+                    subject === "" ||
+                    message === ""
+                ) {
+
+                    showToast(
+                        "Please fill all the fields."
+                    );
+
+                    return;
+                }
+
+
+                /*
+                    Demo form submission.
+
+                    In a real website, the form
+                    data can be sent to a backend.
+                */
+
+
+                form.style.display =
+                    "none";
+
+
+                success.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
