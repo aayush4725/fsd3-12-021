@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMW M340i xDrive | The 3</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            color: white;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            height: 75px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: -2px;
+        }
+
+        .logo span {
+            color: #1476d4;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1476d4;
+        }
+
+        .nav-btn {
+            padding: 12px 20px;
+            background: #1476d4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 120px 6% 50px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.95) 0%,
+                    rgba(0,0,0,0.7) 38%,
+                    rgba(0,0,0,0.15) 100%
+                ),
+                url("https://www.press.bmwgroup.com/india/photo/detail/P90583902/bmw-m340i-01/2025")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .small-title {
+            color: #999;
+            letter-spacing: 5px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(60px, 8vw, 110px);
+            line-height: 0.85;
+            letter-spacing: -6px;
+        }
+
+        .hero h1 span {
+            color: #aaa;
+        }
+
+        .hero p {
+            margin-top: 30px;
+            color: #bbb;
+            line-height: 1.7;
+            max-width: 520px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 15px 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .primary-btn {
+            background: #1476d4;
+            color: white;
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid #666;
+        }
+
+        .primary-btn:hover {
+            background: #0d5bab;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+            color: black;
+        }
+
+        /* ================= SPECS ================= */
+
+        .specs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+
+            padding: 35px 6%;
+        }
+
+        .spec {
+            text-align: center;
+            border-right: 1px solid #333;
+        }
+
+        .spec:last-child {
+            border: none;
+        }
+
+        .spec h2 {
+            font-size: 30px;
+        }
+
+        .spec p {
+            color: #777;
+            font-size: 12px;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 110px 6%;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: clamp(40px, 5vw, 70px);
+            margin-top: 12px;
+            letter-spacing: -3px;
+        }
+
+        .section-title p {
+            max-width: 500px;
+            color: #888;
+            line-height: 1.7;
+            margin-top: 20px;
+        }
+
+        /* ================= FEATURE CARDS ================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: #0d0f12;
+            border: 1px solid #24272c;
+            padding: 35px;
+            min-height: 250px;
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-7px);
+            border-color: #1476d4;
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 50px;
+            color: #1476d4;
+        }
+
+        .feature h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            color: #888;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* ================= CONFIGURATOR ================= */
+
+        #configure {
+            background: #08090b;
+        }
+
+        .configurator {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+        }
+
+        .car-preview {
+            min-height: 500px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #263747 0%,
+                    #0b0d10 60%
+                );
+
+            border: 1px solid #292d33;
+
+            overflow: hidden;
+        }
+
+        .car-preview img {
+            width: 90%;
+            transition: 0.5s;
+            filter: drop-shadow(0 30px 25px black);
+        }
+
+        .options label {
+            display: block;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .colors {
+            display: flex;
+            gap: 15px;
+        }
+
+        .color {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        .color.active {
+            border-color: white;
+        }
+
+        .grey {
+            background: #555;
+        }
+
+        .blue {
+            background: #064477;
+        }
+
+        .black {
+            background: #080808;
+            border: 1px solid #555;
+        }
+
+        .option {
+            width: 100%;
+            padding: 18px;
+
+            margin-top: 10px;
+
+            background: #111318;
+            border: 1px solid #292d34;
+
+            color: white;
+
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .option.active {
+            border-color: #1476d4;
+        }
+
+        .price {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #292d34;
+        }
+
+        .price small {
+            color: #777;
+        }
+
+        .price h2 {
+            font-size: 40px;
+            margin-top: 8px;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 300px 300px;
+            gap: 12px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.15);
+        }
+
+        .gallery .big {
+            grid-row: span 2;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            margin: 0 6% 80px;
+
+            padding: 70px;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #0d4787,
+                    #0b0d11
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .cta h2 {
+            font-size: 50px;
+        }
+
+        .cta p {
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid #222;
+            padding: 35px 6%;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* ================= TOAST ================= */
+
+        .toast {
+            position: fixed;
+
+            bottom: 25px;
+            left: 50%;
+
+            transform: translate(-50%, 30px);
+
+            background: white;
+            color: black;
+
+            padding: 15px 25px;
+
+            border-radius: 4px;
+
+            font-weight: bold;
+
+            opacity: 0;
+
+            transition: 0.3s;
+
+            z-index: 9999;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                background-position: center;
+            }
+
+            .specs {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .spec {
+                border: none;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .configurator {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: 250px 250px 250px;
+            }
+
+            .gallery .big {
+                grid-row: auto;
+            }
+
+            .cta {
+                display: block;
+                padding: 45px;
+            }
+
+            .cta .primary-btn {
+                margin-top: 25px;
+            }
+        }
+
+        @media(max-width:550px) {
+
+            .nav-btn {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            .specs {
+                padding: 30px 4%;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buttons button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        BMW<span>///</span>M
+    </div>
+
+    <ul>
+        <li><a href="#performance">Performance</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#configure">Configure</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+    </ul>
+
+    <button class="nav-btn" onclick="testDrive()">
+        Book a Drive
+    </button>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            BMW M340i xDrive
+        </div>
+
+        <h1>
+            THE 3.<br>
+            <span>REDEFINED.</span>
+        </h1>
+
+        <p>
+            A performance sedan engineered for everyday driving.
+            Experience BMW M performance with the power of a
+            TwinPower Turbo inline-six engine and intelligent xDrive.
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="primary-btn"
+                onclick="document.getElementById('configure').scrollIntoView()">
+
+                Build Yours
+
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="testDrive()">
+
+                Book a Test Drive
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SPECS ================= -->
+
+<div class="specs">
+
+    <div class="spec">
+        <h2>374 hp</h2>
+        <p>Maximum Power</p>
+    </div>
+
+    <div class="spec">
+        <h2>500 Nm</h2>
+        <p>Maximum Torque</p>
+    </div>
+
+    <div class="spec">
+        <h2>4.4 sec</h2>
+        <p>0–100 km/h</p>
+    </div>
+
+    <div class="spec">
+        <h2>xDrive</h2>
+        <p>All Wheel Drive</p>
+    </div>
+
+</div>
+
+
+<!-- ================= PERFORMANCE ================= -->
+
+<section id="performance">
+
+    <div class="section-title">
+
+        <span>Performance</span>
+
+        <h2>
+            Built for the drive.
+        </h2>
+
+        <p>
+            The M340i combines everyday comfort with genuine
+            BMW M performance technology.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ◉
+            </div>
+
+            <h3>
+                M TwinPower Turbo
+            </h3>
+
+            <p>
+                A 3.0-litre inline-six petrol engine producing
+                374 hp and 500 Nm of torque.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ↗
+            </div>
+
+            <h3>
+                Intelligent xDrive
+            </h3>
+
+            <p>
+                Intelligent all-wheel drive helps distribute
+                power between the wheels according to driving conditions.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                M
+            </div>
+
+            <h3>
+                M Sport Hardware
+            </h3>
+
+            <p>
+                M Sport suspension, M Sport brakes, variable
+                sport steering and M Sport differential.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TECHNOLOGY ================= -->
+
+<section id="technology">
+
+    <div class="section-title">
+
+        <span>Technology</span>
+
+        <h2>
+            Designed around you.
+        </h2>
+
+        <p>
+            Modern technology meets a driver-focused cockpit.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ▣
+            </div>
+
+            <h3>
+                BMW Curved Display
+            </h3>
+
+            <p>
+                A digital cockpit combining the driver's display
+                and central information display.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⌁
+            </div>
+
+            <h3>
+                BMW ConnectedDrive
+            </h3>
+
+            <p>
+                Connected services, navigation and smartphone
+                integration keep essential information within reach.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ◌
+            </div>
+
+            <h3>
+                Harman Kardon
+            </h3>
+
+            <p>
+                Premium surround sound creates an immersive
+                listening experience inside the cabin.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONFIGURATOR ================= -->
+
+<section id="configure">
+
+    <div class="section-title">
+
+        <span>Your M340i</span>
+
+        <h2>
+            Configure your own.
+        </h2>
+
+        <p>
+            Select your preferred exterior colour and configuration.
+        </p>
+
+    </div>
+
+
+    <div class="configurator">
+
+        <div class="car-preview">
+
+            <img
+                id="carImage"
+                src="https://www.press.bmwgroup.com/india/photo/detail/P90583902/bmw-m340i-01/2025"
+                alt="BMW M340i">
+
+        </div>
+
+
+        <div class="options">
+
+            <label>
+                Exterior Colour
+            </label>
+
+
+            <div class="colors">
+
+                <button
+                    class="color grey active"
+                    onclick="selectColor(this, 'grey')">
+                </button>
+
+                <button
+                    class="color blue"
+                    onclick="selectColor(this, 'blue')">
+                </button>
+
+                <button
+                    class="color black"
+                    onclick="selectColor(this, 'black')">
+                </button>
+
+            </div>
+
+
+            <label>
+                Configuration
+            </label>
+
+
+            <button
+                class="option active"
+                data-price="0"
+                onclick="selectOption(this)">
+
+                BMW M340i xDrive
+                <br>
+                <small>Standard configuration</small>
+
+            </button>
+
+
+            <button
+                class="option"
+                data-price="150000"
+                onclick="selectOption(this)">
+
+                M Performance Package
+                <br>
+                <small>Additional ₹1.50 lakh</small>
+
+            </button>
+
+
+            <div class="price">
+
+                <small>
+                    Estimated Ex-showroom Price
+                </small>
+
+                <h2 id="price">
+                    ₹77.10 Lakh
+                </h2>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                style="width:100%; margin-top:20px"
+                onclick="requestQuote()">
+
+                Request a Quote
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <span>Gallery</span>
+
+        <h2>
+            Presence from<br>
+            every angle.
+        </h2>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <img
+            class="big"
+            src="https://www.press.bmwgroup.com/india/photo/detail/P90583902/bmw-m340i-01/2025"
+            alt="BMW M340i Exterior">
+
+
+        <img
+            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=90"
+            alt="BMW Performance Car">
+
+
+        <img
+            src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=90"
+            alt="Luxury Performance Car">
+
+
+        <img
+            src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1200&q=90"
+            alt="Performance Car">
+
+
+        <img
+            src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1200&q=90"
+            alt="Luxury Car">
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<div class="cta">
+
+    <div>
+
+        <div class="small-title">
+            Make it yours
+        </div>
+
+        <h2>
+            Ready when you are.
+        </h2>
+
+        <p>
+            Start your M340i journey today.
+        </p>
+
+    </div>
+
+
+    <button
+        class="primary-btn"
+        onclick="testDrive()">
+
+        Book a Test Drive
+
+    </button>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <span>
+        BMW M340i xDrive
+    </span>
+
+    <span>
+        Product Page Project • 2026
+    </span>
+
+</footer>
+
+
+<div class="toast" id="toast"></div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+let basePrice = 7710000;
+let additionalPrice = 0;
+
+const toast = document.getElementById("toast");
+
+
+function showToast(message) {
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2500);
+
+}
+
+
+function testDrive() {
+
+    showToast(
+        "Test drive request started!"
+    );
+
+}
+
+
+function requestQuote() {
+
+    showToast(
+        "Quote request submitted successfully!"
+    );
+
+}
+
+
+function selectOption(button) {
+
+    document
+        .querySelectorAll(".option")
+        .forEach(option => {
+
+            option.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    additionalPrice =
+        Number(button.dataset.price);
+
+
+    updatePrice();
+
+}
+
+
+function updatePrice() {
+
+    let finalPrice =
+        (basePrice + additionalPrice) / 100000;
+
+
+    document.getElementById("price").innerText =
+        "₹" + finalPrice.toFixed(2) + " Lakh";
+
+}
+
+
+function selectColor(button, color) {
+
+    document
+        .querySelectorAll(".color")
+        .forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    if (color === "blue") {
+
+        document
+            .querySelector(".car-preview")
+            .style.background =
+            "radial-gradient(circle,#124b78,#080a0d)";
+
+        showToast("Tanzanite Blue selected");
+
+    }
+
+
+    else if (color === "grey") {
+
+        document
+            .querySelector(".car-preview")
+            .style.background =
+            "radial-gradient(circle,#394047,#080a0d)";
+
+        showToast("Dravit Grey selected");
+
+    }
+
+
+    else {
+
+        document
+            .querySelector(".car-preview")
+            .style.background =
+            "radial-gradient(circle,#222,#050505)";
+
+        showToast("Black selected");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
